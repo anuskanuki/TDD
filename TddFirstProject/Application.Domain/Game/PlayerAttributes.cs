@@ -69,8 +69,8 @@ namespace Application.Domain
             {
                 "Agility",
                 "Agility Strength",
-                "Artificial Intelligence",
                 "AK-47",
+                "Artificial Intelligence",
                 // "Fly"
                 // "Strength",
                 "Strength"

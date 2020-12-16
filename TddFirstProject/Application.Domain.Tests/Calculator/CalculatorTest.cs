@@ -1,5 +1,4 @@
-﻿
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Application.Domain.Tests
 {
@@ -90,9 +89,9 @@ namespace Application.Domain.Tests
         {
             var sut = new Calculator();
 
-            var result = sut.DivideDouble(10.54, 2.02);
+            var result = sut.DivideDouble(10.5, 2.5);
 
-            Assert.That(result, Is.EqualTo(5.21782178));
+            Assert.That(result, Is.EqualTo(4.2));
         }
     }
 }
