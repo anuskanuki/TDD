@@ -11,7 +11,6 @@ namespace Application.Domain.Tests.AuctionFolder
         private User steveWozniak;
         private User billGates;
 
-
         [SetUp]
         public void SetUp()
         {
@@ -26,10 +25,10 @@ namespace Application.Domain.Tests.AuctionFolder
             Auction Auction = new AuctionGenerator().To("Macbook Pro 15").Build();
             Assert.AreEqual(0, Auction.Bids.Count);
 
-            Auction.Offer(new Bid(new User("Steve Jobs"), 2000));
+            Auction.Offer(new Bid(new User("Steve Jobs"), 1999));
 
             Assert.AreEqual(1, Auction.Bids.Count);
-            Assert.AreEqual(2000, Auction.Bids[0].Value, 0.00001);
+            Assert.AreEqual(2000, Auction.Bids[0].Value, 1);
         }
 
         [Test]
@@ -83,7 +82,7 @@ namespace Application.Domain.Tests.AuctionFolder
         }
 
         [Test]
-        public void ShouldDoubleLastBid()
+        public void ShouldDoubleLastBidByUser()
         {
             Auction auction = new AuctionGenerator().To("Macbook Pro 15")
                 .Bid(steveJobs, 2000)
@@ -92,7 +91,7 @@ namespace Application.Domain.Tests.AuctionFolder
 
             auction.DoubleBid(steveJobs);
 
-            Assert.AreEqual(4000, auction.Bids[2].Value, 0.00001);
+            Assert.AreEqual(4000, auction.Bids[2].Value);
         }
 
         [Test]

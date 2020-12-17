@@ -37,7 +37,7 @@ namespace Application.Domain.Tests
         {
             var sut = new PlayerAttributes();
 
-            Assert.That(sut.Weapons, Has.Exactly(2).EndWith("Strength"));
+            Assert.That(sut.Weapons, Has.Exactly(2).EndWith("Strength").IgnoreCase);
         }
 
         [Test]
